@@ -4,9 +4,9 @@ info:
   title: Swagger Çağdaş Hello World
 # during dev, should point to your local machine
 host: localhost:10010
-# basePath prefixes all resource paths
+# basePath prefixes all resource paths 
 basePath: /
-#
+# 
 schemes:
   # tip: remove http to make production-grade
   - http
@@ -26,7 +26,7 @@ paths:
       responses:
         "200":
           description: "An array of todos"
-          schema:
+          schema: 
             type: "array"
             items:
               $ref: "#/definitions/Todo"
@@ -35,7 +35,7 @@ paths:
       operationId: "AddTodo"
       produces:
       - "application/json"
-      parameters:
+      parameters: 
       - in: "body"
         name: "todo"
         description: "the Todo to be added"
@@ -46,6 +46,7 @@ paths:
         200:
           description: "Successfull Todo Add"
       x-swagger-router-controller: "AddTodo"
+    
   /hello:
     # binds a127 app logic to a route
     x-swagger-router-controller: hello_world
@@ -84,9 +85,9 @@ paths:
           type: "integer"
           format: "int64"
         responses:
-          200:
-            description: "Todo response":
-            schemes:
+          "200":
+            description: "Todo response"
+            schema:
               $ref: "#/definitions/Todo"
         x-swagger-router-controller: "FindTodoById"
   /swagger:
